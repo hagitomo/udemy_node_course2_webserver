@@ -36,6 +36,12 @@ app.get('/about', (req, res) => {
   })
 })
 
+app.get('/contact', (req, res) => {
+  res.render('contact.hbs', {
+    pageTitle: 'Contact Page',
+  })
+})
+
 app.get('/bad', (req, res) => {
   res.send({
     errorMsg: 'unable to handle request'

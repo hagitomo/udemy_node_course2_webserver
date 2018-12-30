@@ -2,6 +2,7 @@ const express = require('express')
 const fs = require('fs')
 const hbs = require('hbs')
 
+const port = process.env.PORT || 3000 // herokuではPORTを取得, localでは存在しない
 var app = express()
 
 
@@ -53,6 +54,6 @@ app.use((req, res, next) => {
   next()
 })
 
-app.listen(3000, () => {
-  console.log('server starting ......')
+app.listen(port, () => {
+  console.log( `server is up on ${port} ......`)
 })
